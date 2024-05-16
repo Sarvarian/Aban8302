@@ -16,6 +16,7 @@ public abstract class Test : IDisposable
 
 	public virtual void Dispose()
 	{
+		GC.SuppressFinalize(this);
 		Directory.Delete(DirectoryPath, true);
 	}
 }
