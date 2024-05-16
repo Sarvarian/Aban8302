@@ -4,6 +4,7 @@ namespace AbanLibTests.facility;
 
 public class TestTest(ITestOutputHelper output) : Test
 {
+	[Fact]
 	public override void Dispose()
 	{
 		base.Dispose();
