@@ -8,6 +8,7 @@ public class TestTest(ITestOutputHelper output) : Test
 	{
 		base.Dispose();
 		Assert.False(Path.Exists(DirectoryPath));
+		GC.SuppressFinalize(this);
 	}
 
 	[Fact]
