@@ -43,7 +43,10 @@ public class TestTest(ITestOutputHelper output) : Test
 		var g2 = GuidString;
 		var g3 = GuidString;
 		Assert.NotEqual(g1, g2);
-		Assert.NotEqual(g1, g3);
 		Assert.NotEqual(g2, g3);
+		Assert.NotEqual(g3, g1);
+		Assert.NotEqual(GuidString, GuidString);
+		Assert.NotEqual(GuidString, GuidString);
+		Assert.NotEqual(GuidString, GuidString);
 	}
 }
