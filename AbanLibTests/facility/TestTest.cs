@@ -31,6 +31,18 @@ public class TestTest(ITestOutputHelper output) : Test
 	}
 
 	[Fact]
+	public void PreviousGuidMustBeDifferentToGuidString()
+	{
+		Assert.NotEqual(GuidString, PreviousGuid);
+	}
+
+	[Fact]
+	public void LatestGuidIsGuidString()
+	{
+		Assert.Equal(GuidString, LatestGuid);
+	}
+
+	[Fact]
 	public void CreatesTempDirectoryOnConstruction()
 	{
 		Assert.True(Path.Exists(DirectoryPath));
