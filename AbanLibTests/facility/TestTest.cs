@@ -5,6 +5,12 @@ namespace AbanLibTests.facility;
 public class TestTest(ITestOutputHelper output) : Test
 {
 	[Fact]
+	public void CreatesTempDirectoryOnConstruction()
+	{
+		Assert.True(Path.Exists(DirectoryPath));
+	}
+
+	[Fact]
 	public override void Dispose()
 	{
 		base.Dispose();
@@ -31,20 +37,13 @@ public class TestTest(ITestOutputHelper output) : Test
 	}
 
 	[Fact]
-	public void PreviousGuidMustBeDifferentToGuidString()
+	public void GuidStringGivesNewGuidEachTime()
 	{
-		Assert.NotEqual(GuidString, PreviousGuid);
-	}
-
-	[Fact]
-	public void LatestGuidIsGuidString()
-	{
-		Assert.Equal(GuidString, LatestGuid);
-	}
-
-	[Fact]
-	public void CreatesTempDirectoryOnConstruction()
-	{
-		Assert.True(Path.Exists(DirectoryPath));
+		var g1 = GuidString;
+		var g2 = GuidString;
+		var g3 = GuidString;
+		Assert.NotEqual(g1, g2);
+		Assert.NotEqual(g1, g3);
+		Assert.NotEqual(g2, g3);
 	}
 }
