@@ -7,8 +7,8 @@ public class TestTest(ITestOutputHelper output) : Test
 	public override void Dispose()
 	{
 		base.Dispose();
-		Assert.False(Path.Exists(DirectoryPath));
 		GC.SuppressFinalize(this);
+		Assert.False(Path.Exists(DirectoryPath));
 	}
 
 	[Fact]
