@@ -1,4 +1,4 @@
-﻿namespace AbanLibTests.facility;
+﻿namespace AbanLibTests.TestFacility;
 
 public class TestTest : Test
 {

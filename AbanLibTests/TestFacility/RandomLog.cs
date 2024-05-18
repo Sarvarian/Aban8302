@@ -1,7 +1,7 @@
 ﻿using AbanLib;
 using AbanLib.Logging;
 
-namespace AbanLibTests.facility;
+namespace AbanLibTests.TestFacility;
 
 public class RandomLog : LogBase
 {

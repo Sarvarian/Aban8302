@@ -1,5 +1,5 @@
 ﻿using AbanLib.Logging;
-using AbanLibTests.facility;
+using AbanLibTests.TestFacility;
 
 namespace AbanLibTests.Logging;
 

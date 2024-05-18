@@ -1,6 +1,6 @@
 ﻿using AbanLib;
 
-namespace AbanLibTests.facility;
+namespace AbanLibTests.TestFacility;
 
 public abstract class Test : IDisposable
 {

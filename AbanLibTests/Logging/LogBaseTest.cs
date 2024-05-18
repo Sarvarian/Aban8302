@@ -1,4 +1,4 @@
-﻿using AbanLibTests.facility;
+﻿using AbanLibTests.TestFacility;
 using Xunit.Abstractions;
 
 namespace AbanLibTests.Logging;
