@@ -10,11 +10,23 @@ public abstract class LogBase(DateTime logTime) : ILog
 	public ILog? PreviousLog { get; protected set; } = null;
 	public ILog? NextLog { get; protected set; } = null;
 
+	public abstract ILogElement[] Elements { get; }
 	public abstract string Title { get; }
 	public abstract string Message { get; }
-	public abstract string Formatted { get; }
-	public abstract string FormattedVerbose { get; }
-	public abstract ILogElement[] Elements { get; }
+
+	public virtual string Formatted => GenerateFormatted();
+	public virtual string FormattedVerbose => GenerateFormattedVerbose();
 
 	object? ILog.ExtraDataForUser { get; set; } = null;
+
+	private string GenerateFormatted()
+	{
+		return $"{Title}\n{Message}";
+	}
+
+	private string GenerateFormattedVerbose()
+	{
+		var start = $"{Formatted}";
+		return Elements.Aggregate(start, (current, element) => current + $"\n{element.Name}: {element.DataAsText}");
+	}
 }
