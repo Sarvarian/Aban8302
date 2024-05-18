@@ -1,4 +1,6 @@
-﻿namespace AbanLibTests.facility;
+﻿using AbanLib;
+
+namespace AbanLibTests.facility;
 
 public abstract class Test : IDisposable
 {
@@ -7,7 +9,7 @@ public abstract class Test : IDisposable
 
 	protected Test()
 	{
-		DirectoryName = $"AbLibTest-{AbanLib.Rand.GuidString}";
+		DirectoryName = $"AbLibTest-{Rand.GuidString}";
 		var tempDirectory = Path.GetTempPath();
 		DirectoryPath = Path.Combine(tempDirectory, DirectoryName);
 		Directory.CreateDirectory(DirectoryPath);
