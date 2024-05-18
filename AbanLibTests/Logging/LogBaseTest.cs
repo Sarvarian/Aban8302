@@ -30,9 +30,8 @@ public class LogBaseTest(ITestOutputHelper output) : Test
 		Assert.Equal(expected, log.FormattedVerbose);
 	}
 
-
 	[Fact]
-	public void TestName()
+	public void CheckOutAllTheseLogElements()
 	{
 		var log = RandomLog.Create();
 		output.WriteLine(log.FormattedVerbose);
