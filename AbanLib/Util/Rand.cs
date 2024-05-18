@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace AbanLib;
+namespace AbanLib.Util;
 
 public static class Rand
 {

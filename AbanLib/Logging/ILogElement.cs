@@ -1,4 +1,6 @@
-﻿namespace AbanLib.Logging;
+﻿using AbanLib.Util;
+
+namespace AbanLib.Logging;
 
 public interface ILogElement
 {

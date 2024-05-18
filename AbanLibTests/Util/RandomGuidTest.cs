@@ -1,8 +1,8 @@
-﻿using AbanLib;
+﻿using AbanLib.Util;
 using AbanLibTests.TestFacility;
 using Xunit.Abstractions;
 
-namespace AbanLibTests;
+namespace AbanLibTests.Util;
 
 public class RandomGuidTest(ITestOutputHelper output) : Test
 {
