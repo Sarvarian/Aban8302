@@ -14,19 +14,10 @@ public abstract class LogBase(DateTime logTime) : ILog
 	public abstract string Title { get; }
 	public abstract string Message { get; }
 
-	public virtual string Formatted => GenerateFormatted();
-	public virtual string FormattedVerbose => GenerateFormattedVerbose();
+	public virtual string Formatted => $"{Title}\n{Message}";
+
+	public virtual string FormattedVerbose => Elements.Aggregate($"{Formatted}",
+		(current, element) => current + $"\n{element.Name}: {element.DataAsText}");
 
 	object? ILog.ExtraDataForUser { get; set; } = null;
-
-	private string GenerateFormatted()
-	{
-		return $"{Title}\n{Message}";
-	}
-
-	private string GenerateFormattedVerbose()
-	{
-		var start = $"{Formatted}";
-		return Elements.Aggregate(start, (current, element) => current + $"\n{element.Name}: {element.DataAsText}");
-	}
 }
