@@ -20,4 +20,12 @@ public abstract class Test : IDisposable
 		GC.SuppressFinalize(this);
 		if (Directory.Exists(DirectoryPath)) Directory.Delete(DirectoryPath, true);
 	}
+
+	public static Type[] SubTypesOf<T>()
+	{
+		return AppDomain.CurrentDomain.GetAssemblies()
+			.SelectMany(domainAssembly => domainAssembly.GetTypes())
+			.Where(type => typeof(T).IsAssignableFrom(type))
+			.ToArray();
+	}
 }
