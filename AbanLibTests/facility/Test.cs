@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace AbanLibTests.facility;
+﻿namespace AbanLibTests.facility;
 
 public abstract class Test : IDisposable
 {
@@ -9,22 +7,12 @@ public abstract class Test : IDisposable
 
 	protected Test()
 	{
-		DirectoryName = $"AbLibTest-{GuidString}";
+		DirectoryName = $"AbLibTest-{AbanLib.Rand.GuidString}";
 		var tempDirectory = Path.GetTempPath();
 		DirectoryPath = Path.Combine(tempDirectory, DirectoryName);
 		Directory.CreateDirectory(DirectoryPath);
 	}
 
-	public static string GuidString => Guid.NewGuid().ToString();
-
-	public static Random Random =>
-		new((Guid.NewGuid() + DateTime.Now.ToString(CultureInfo.CurrentCulture)).GetHashCode());
-
-	public static int RandomInteger => Random.Next();
-	public static float RandomFloat => Random.NextSingle();
-	public static double RandomDouble => Random.NextDouble();
-	public static bool RandomBoolean => RandomInteger % 2 == 0;
-	public static string RandomString => GuidString;
 
 	public virtual void Dispose()
 	{
