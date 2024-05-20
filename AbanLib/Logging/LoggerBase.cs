@@ -1,4 +1,4 @@
-﻿namespace AbanLib.Logging;
+namespace AbanLib.Logging;
 
 public abstract class LoggerBase : ILogger
 {

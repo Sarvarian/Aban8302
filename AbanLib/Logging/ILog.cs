@@ -1,4 +1,4 @@
-﻿namespace AbanLib.Logging;
+namespace AbanLib.Logging;
 
 public interface ILog
 {

@@ -1,4 +1,4 @@
-﻿using AbanLib.Util;
+using AbanLib.Util;
 
 namespace AbanLib.Logging;
 

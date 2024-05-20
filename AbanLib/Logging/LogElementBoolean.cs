@@ -1,4 +1,4 @@
-﻿namespace AbanLib.Logging;
+namespace AbanLib.Logging;
 
 public readonly struct LogElementBoolean(string name, bool data) : ILogElement
 {

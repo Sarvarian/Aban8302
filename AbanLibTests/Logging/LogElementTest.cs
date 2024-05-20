@@ -1,4 +1,4 @@
-﻿using AbanLib.Logging;
+using AbanLib.Logging;
 using AbanLibTests.TestFacility;
 
 namespace AbanLibTests.Logging;
